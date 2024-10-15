@@ -1,8 +1,10 @@
+server:
+  port: 8083
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: password
+    username: admin
+    password: admin123
     #Change The UserName Password
     url: jdbc:mysql://localhost:3306/room?createDatabaseIfNotExist=true
   jpa:
@@ -12,8 +14,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
   application:
     name: room-service
-server:
-  port: 8083
+
 eureka:
   client:
     register-with-eureka: true
