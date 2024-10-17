@@ -6,12 +6,25 @@ import com.hotel.model_service.controller.impl.CommonControllerImpl;
 import com.hotel.model_service.model.Room;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/room")
-public class RoomControllerImpl extends CommonControllerImpl<Room, Integer, RoomService>  implements RoomController {
 
+@RestController
+@RequestMapping("room")
+public class RoomControllerImpl extends CommonControllerImpl<Room, Integer, RoomService> implements RoomController {
+
+    public RoomControllerImpl(RoomService service) {
+        super(service);
+    }
+
+    @Override
+    public ResponseEntity<Room> findById(Room o) throws Exception {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<String> thank() {
+        return new ResponseEntity<>(service.say("THank You"), HttpStatus.OK);
+    }
 }

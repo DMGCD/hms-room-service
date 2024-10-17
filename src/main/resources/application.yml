@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: admin
-    password: admin123
-    #Change The UserName Password
+    username: root
+    password: password
+#    Change The UserName Password
     url: jdbc:mysql://localhost:3306/room?createDatabaseIfNotExist=true
   jpa:
     hibernate:
@@ -14,8 +14,9 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
   application:
     name: room-service
-
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
